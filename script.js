@@ -8,7 +8,8 @@ class Stopwatch {
                 sec: document.querySelector('.time__seconds'),
                 milSec: document.querySelector('.time__milliseconds')
             },
-            start: document.querySelector('.control__btn')
+            start: document.querySelector('.control__btn--start'),
+            stop: document.querySelector('.control__btn--stop')
         };
         this.state = {};
         this.init()
@@ -17,10 +18,17 @@ class Stopwatch {
 
     }
     start() {
+        console.log('start')
+
+    }
+    stop() {
+        console.log('stop')
 
     }
     init() {
         console.log('Stopwatch initilized');
         this.DOM.start.addEventListener('click', this.start);
+        this.DOM.stop.addEventListener('click', this.stop);
     }
 }
+const stopwatch = new Stopwatch();
