@@ -1,0 +1,91 @@
+body {
+    font-family: 'Alata', sans-serif;
+    background: linear-gradient(45deg, #330000, #410054);
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.heading {
+    font-weight: normal;
+}
+
+.time {
+    max-width: 200px;
+    font-size: 1.6rem;
+    padding: 0.8rem 0;
+}
+
+.time__item {
+    position: relative;
+}
+
+.time__item::after {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    letter-spacing: 2px;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: .8rem;
+}
+
+.time__hours::after {
+    content: 'hrs';
+}
+
+.time__minutes::after {
+    content: 'mins';
+}
+
+.time__seconds::after {
+    content: 'secs';
+}
+
+.time__milliseconds::after {
+    content: 'ms';
+}
+
+.laps {
+    margin-top: 1rem;
+}
+
+.laps__list>li {
+    padding: .2rem 0;
+}
+
+.control__btn {
+    /* -webkit-appearance: none; */
+    background: none;
+    color: inherit;
+    padding: 0.6rem 1rem;
+    margin-bottom: 0.2rem;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+}
+
+.col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+[class*="col-"] {
+    flex-grow: 1;
+}

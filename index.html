@@ -6,29 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Stopwatch</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>Stop watch</h1>
+    <div class="container">
+        <h1 class="heading">stop watch</h1>
 
-    <div class="stopwatch">
-        <div class="time">
-            <div class="time__hours">00</div>
-            <div class="time__minutes">00</div>
-            <div class="time__seconds">00</div>
-            <div class="time__milliseconds">000</div>
+        <div class="stopwatch">
+            <div class="time row">
+                <div class="col-3">
+                    <div class="time__item time__hours">0</div>
+                </div>
+                <div class="col-3">
+                    <div class="time__item time__minutes">0</div>
+                </div>
+                <div class="col-3">
+                    <div class="time__item time__seconds">0</div>
+                </div>
+                <div class="col-3">
+                    <div class="time__item time__milliseconds">0</div>
+                </div>
+            </div>
+            <div class="control row">
+                <div class="col-4">
+                    <button class="control__btn control__btn--start">Start</button>
+                </div>
+                <div class="col-4">
+                    <button class="control__btn control__btn--stop">Stop</button>
+                </div>
+                <div class="col-4">
+                    <button class="control__btn control__btn--continue">Continue</button>
+                </div>
+                <div class="col-12">
+                    <button class="control__btn control__btn--save">Save time</button>
+                </div>
+            </div>
         </div>
-        <div class="conrol">
-            <button class="control__btn control__btn--start">Start</button>
-            <button class="control__btn control__btn--stop">Stop</button>
-            <button class="control__btn control__btn--continue">Continue</button>
-            <button class="control__btn control__btn--save">Save time</button>
-        </div>
-    </div>
 
-    <div class="laps">
-        <div class="laps__head"></div>
-        <ul class="laps__list"></ul>
+        <div class="laps">
+            <div class="laps__head">Lap times</div>
+            <ol class="laps__list"></ol>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
