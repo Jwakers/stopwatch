@@ -65,13 +65,18 @@ class Stopwatch {
         console.log(this.state)
         // Stop timer
         this.stop();
+        // stops saving duplicate laps
+        if (this.state.previous === this.state.time) return
         // get lap time
         const time = this.state.time;
         this.state.laps.push(time);
+        this.state.previous = this.state.time;
         console.log(time)
         // create element
+        const numberFormat = this.state.laps.length < 10 ? `0${this.state.laps.length}` : this.state.laps.length;
         const li = `
-        <li data-lap="${this.state.laps.length}" data-time="${this.state.timeElapsed}">${time.hrs}:${time.mins}:${time.secs}:${time.mSecs}</li>
+        <li data-lap="${this.state.laps.length}" data-time="${this.state.timeElapsed}">
+        <span class="laps__list__number">${numberFormat}.</span>${time.hrs}:${time.mins}:${time.secs}:${time.mSecs}</li>
         `;
         // append element
         this.DOM.laps.innerHTML += li;
