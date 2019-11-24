@@ -19,11 +19,7 @@ class Stopwatch {
         };
         this.init();
     }
-    reset() {
-
-    }
     renderTime() {
-
         // update DOM at different intervals
         clearInterval(this.state.elapsed);
         this.state.elapsed = setInterval(() => {
@@ -45,7 +41,6 @@ class Stopwatch {
         }, 1);
     }
     start(reset) {
-        console.log('start');
         // Set start time used for future calculations, resets start time if specified
         if (reset) this.state.startTime = new Date();
         // Render to DOM
@@ -56,13 +51,10 @@ class Stopwatch {
         this.start(false);
     }
     stop() {
-        console.log('stop');
         // clears the last interval to stop the watch but does not reset the time
         clearInterval(this.state.elapsed);
     }
     save() {
-        console.log('save lap');
-        console.log(this.state)
         // Stop timer
         this.stop();
         // stops saving duplicate laps
@@ -71,7 +63,6 @@ class Stopwatch {
         const time = this.state.time;
         this.state.laps.push(time);
         this.state.previous = this.state.time;
-        console.log(time)
         // create element
         const numberFormat = this.state.laps.length < 10 ? `0${this.state.laps.length}` : this.state.laps.length;
         const li = `
@@ -88,7 +79,6 @@ class Stopwatch {
         this.state.laps = [];
     }
     init() {
-        console.log('Stopwatch initilized');
         this.DOM.start.addEventListener('click', this.start.bind(this));
         this.DOM.stop.addEventListener('click', this.stop.bind(this));
         this.DOM.continue.addEventListener('click', this.continue.bind(this));
